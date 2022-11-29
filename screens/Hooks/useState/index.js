@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { Hooks } from './screens/Hooks';
 
-const App = () => {
-  const [data, setData] = useState(10)
+export const UseState = () => {
+  const [count, setCount] = useState(0);
     return (
       <View style={styles.container}>
-        <Hooks data={data}/>
-        <Button title='Add state' onPress={()=>setData(data+10)}/>
+        <Text style={styles.bigBlue}>This is useState Class</Text>
+        <Text style={styles.text}>Count is: {count}</Text>
+        <Button title='Add state' onPress={()=>setCount(count+1)}/>
+        <Button title='Remove state' onPress={()=>setCount(count-1)}/>
       </View>
     );
 };
@@ -29,5 +30,3 @@ const styles = StyleSheet.create({
     margin: 20
   },
 });
-
-export default App;
